@@ -8,7 +8,7 @@
 body {
     margin: 0;
     height: 100vh;
-    background: #ffb6c1; /* Pink background */
+    background: #ffb6c1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,7 +17,7 @@ body {
 
 /* Main card */
 .card {
-    background: #ffe0eb; /* lighter pink */
+    background: #ffe0eb;
     padding: 60px;
     border-radius: 30px;
     text-align: center;
@@ -92,6 +92,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 40px;
+    margin-bottom: 30px;
 }
 
 button {
@@ -114,7 +115,23 @@ button {
     position: relative;
 }
 
-/* Heart animation */
+/* Yay section (hidden initially) */
+.yay {
+    display: none;
+    margin-top: 20px;
+}
+
+.sticker {
+    font-size: 60px;
+}
+
+.yay-text {
+    font-size: 28px;
+    color: #ff1f75;
+    font-weight: bold;
+}
+
+/* Animations */
 @keyframes pulse {
     0% { transform: rotate(-45deg) scale(1); }
     50% { transform: rotate(-45deg) scale(1.1); }
@@ -141,8 +158,14 @@ button {
 
     <!-- Buttons -->
     <div class="buttons">
-        <button class="yes" onclick="alert('Yaaay! 💖🥰')">Yes</button>
+        <button class="yes" onclick="showYay()">Yes</button>
         <button class="no" onmouseover="moveNo(this)">No</button>
+    </div>
+
+    <!-- Yay message -->
+    <div class="yay" id="yay">
+        <div class="sticker">🥰🎉</div>
+        <div class="yay-text">Yay!!! 💖</div>
     </div>
 </div>
 
@@ -151,6 +174,10 @@ function moveNo(btn) {
     const x = Math.random() * 200 - 100;
     const y = Math.random() * 200 - 100;
     btn.style.transform = `translate(${x}px, ${y}px)`;
+}
+
+function showYay() {
+    document.getElementById("yay").style.display = "block";
 }
 </script>
 
