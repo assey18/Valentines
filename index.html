@@ -3,34 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <title>Valentine 💖</title>
-<link src="stylesheet" href="style.css"
+<link src="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<!-- Heart -->
-<div class="heart">
-    <div class="eye left"></div>
-    <div class="eye right"></div>
-    <div class="smile"></div>
-    <div class="kiss">💋</div>
-</div>
+<div class="card">
+    <!-- Heart -->
+    <div class="heart">
+        <div class="eye left"></div>
+        <div class="eye right"></div>
+        <div class="smile"></div>
+    </div>
 
-<!-- Message -->
-<div class="message">
-    <strong>Sinovuyo Janda</strong><br>
-    Will you be my Valentine? 💘
-</div>
+    <!-- Message -->
+    <div class="message">
+        Sinovuyo Janda,<br>
+        Will you be my Valentine? 💘
+    </div>
 
-<!-- Buttons -->
-<div class="buttons">
-    <button class="yes" onclick="alert('Yay! 💖 You made my day!')">Yes</button>
-    <button class="no" onmouseover="moveButton(this)">No</button>
+    <!-- Buttons -->
+    <div class="buttons">
+        <button class="yes" onclick="alert('Yaaay! 💖🥰')">Yes</button>
+        <button class="no" onmouseover="moveNo(this)">No</button>
+    </div>
 </div>
 
 <script>
-function moveButton(btn) {
+function moveNo(btn) {
     const x = Math.random() * 200 - 100;
     const y = Math.random() * 200 - 100;
     btn.style.transform = `translate(${x}px, ${y}px)`;
