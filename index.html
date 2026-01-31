@@ -136,6 +136,13 @@ button {
     50% { transform: rotate(-45deg) scale(1.1); }
     100% { transform: rotate(-45deg) scale(1); }
 }
+
+.note {
+    font-size: 14px; /* small font */
+    color: #8a0040;
+    margin-top: 10px;
+    opacity: 0.8;
+}
 </style>
 </head>
 
@@ -160,6 +167,9 @@ button {
         <button class="yes" onclick="showLove()">Yes</button>
         <button class="no" onmouseover="moveNo(this)">No</button>
     </div>
+<p class="note">
+    I don’t take “No” for an answer 😉 try and see for yourself
+</p>
 
     <!-- Love message -->
     <div class="yay" id="yay">
@@ -175,10 +185,11 @@ function moveNo(btn) {
     btn.style.transform = `translate(${x}px, ${y}px)`;
 }
 
-function showLove() {
-    document.getElementById("buttons").style.display = "none";
-    document.getElementById("yay").style.display = "block";
+function showLove() { 
+    document.getElementById("buttons").style.display = "none"; 
+    document.getElementById("yay").style.display = "block"; 
 }
+
 </script>
 
 </body>
