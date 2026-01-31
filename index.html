@@ -88,7 +88,6 @@ body {
 
 /* Buttons */
 .buttons {
-    position: relative;
     display: flex;
     justify-content: center;
     gap: 40px;
@@ -115,23 +114,23 @@ button {
     position: relative;
 }
 
-/* Yay section (hidden initially) */
+/* Yay section */
 .yay {
     display: none;
     margin-top: 20px;
 }
 
 .sticker {
-    font-size: 60px;
+    font-size: 70px;
 }
 
 .yay-text {
-    font-size: 28px;
-    color: #ff1f75;
+    font-size: 30px;
     font-weight: bold;
+    color: #ff1f75;
 }
 
-/* Animations */
+/* Animation */
 @keyframes pulse {
     0% { transform: rotate(-45deg) scale(1); }
     50% { transform: rotate(-45deg) scale(1.1); }
@@ -157,15 +156,15 @@ button {
     </div>
 
     <!-- Buttons -->
-    <div class="buttons">
-        <button class="yes" onclick="showYay()">Yes</button>
+    <div class="buttons" id="buttons">
+        <button class="yes" onclick="showLove()">Yes</button>
         <button class="no" onmouseover="moveNo(this)">No</button>
     </div>
 
-    <!-- Yay message -->
+    <!-- Love message -->
     <div class="yay" id="yay">
-        <div class="sticker">🥰🎉</div>
-        <div class="yay-text">Yay!!! 💖</div>
+        <div class="sticker">🥰💖</div>
+        <div class="yay-text">Yay!! I Love You ❤️</div>
     </div>
 </div>
 
@@ -176,7 +175,8 @@ function moveNo(btn) {
     btn.style.transform = `translate(${x}px, ${y}px)`;
 }
 
-function showYay() {
+function showLove() {
+    document.getElementById("buttons").style.display = "none";
     document.getElementById("yay").style.display = "block";
 }
 </script>
