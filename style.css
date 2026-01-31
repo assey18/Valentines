@@ -1,0 +1,123 @@
+body {
+    background: #fce4ec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    position: relative;
+}
+
+/* Envelope */
+.envelope {
+    width: 200px;
+    height: 120px;
+    background: #fff;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Envelope flap */
+.flap {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #f8bbd0;
+    clip-path: polygon(0 0, 50% 50%, 100% 0);
+    transform-origin: top;
+    animation: openFlap 2s forwards;
+}
+
+/* Letter inside */
+.letter {
+    position: absolute;
+    bottom: -100%;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    animation: letterUp 2s 1.5s forwards;
+}
+
+/* Heart */
+.heart {
+    width: 50px;
+    height: 50px;
+    background: red;
+    position: relative;
+    margin: 30px auto;
+    transform: rotate(-45deg);
+    animation: heartPop 1s 3.2s forwards;
+    opacity: 0;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    width: 50px;
+    height: 50px;
+    background: red;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart::before {
+    top: -25px;
+    left: 0;
+}
+
+.heart::after {
+    left: 25px;
+    top: 0;
+}
+
+/* Face */
+.eye {
+    width: 6px;
+    height: 6px;
+    background: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+}
+
+.eye.left {
+    left: 12px;
+}
+
+.eye.right {
+    right: 12px;
+}
+
+.smile {
+    width: 15px;
+    height: 8px;
+    border-bottom: 2px solid black;
+    border-radius: 0 0 15px 15px;
+    position: absolute;
+    bottom: 12px;
+    left: 18px;
+}
+
+/* Animations */
+@keyframes openFlap {
+    to {
+        transform: rotateX(180deg);
+    }
+}
+
+@keyframes letterUp {
+    to {
+        bottom: 0;
+    }
+}
+
+@keyframes heartPop {
+    to {
+        transform: rotate(-45deg) scale(1.2);
+        opacity: 1;
+    }
+}
