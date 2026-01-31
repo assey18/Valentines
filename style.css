@@ -1,123 +1,111 @@
 body {
-    background: #fce4ec;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 0;
     height: 100vh;
-}
-
-.container {
-    position: relative;
-}
-
-/* Envelope */
-.envelope {
-    width: 200px;
-    height: 120px;
-    background: #fff;
-    position: relative;
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-/* Envelope flap */
-.flap {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: #f8bbd0;
-    clip-path: polygon(0 0, 50% 50%, 100% 0);
-    transform-origin: top;
-    animation: openFlap 2s forwards;
-}
-
-/* Letter inside */
-.letter {
-    position: absolute;
-    bottom: -100%;
-    width: 100%;
-    height: 100%;
-    background: #fff;
-    animation: letterUp 2s 1.5s forwards;
+    background: linear-gradient(#ffe6eb, #ffc1d6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
 }
 
 /* Heart */
 .heart {
-    width: 50px;
-    height: 50px;
-    background: red;
     position: relative;
-    margin: 30px auto;
+    width: 100px;
+    height: 100px;
+    background: red;
     transform: rotate(-45deg);
-    animation: heartPop 1s 3.2s forwards;
-    opacity: 0;
+    margin-bottom: 40px;
 }
 
 .heart::before,
 .heart::after {
     content: "";
-    width: 50px;
-    height: 50px;
+    position: absolute;
+    width: 100px;
+    height: 100px;
     background: red;
     border-radius: 50%;
-    position: absolute;
 }
 
 .heart::before {
-    top: -25px;
+    top: -50px;
     left: 0;
 }
 
 .heart::after {
-    left: 25px;
+    left: 50px;
     top: 0;
 }
 
 /* Face */
 .eye {
-    width: 6px;
-    height: 6px;
+    position: absolute;
+    width: 8px;
+    height: 8px;
     background: black;
     border-radius: 50%;
-    position: absolute;
-    top: 20px;
+    top: 40px;
 }
 
-.eye.left {
-    left: 12px;
-}
-
-.eye.right {
-    right: 12px;
-}
+.eye.left { left: 25px; }
+.eye.right { right: 25px; }
 
 .smile {
-    width: 15px;
-    height: 8px;
-    border-bottom: 2px solid black;
-    border-radius: 0 0 15px 15px;
     position: absolute;
-    bottom: 12px;
-    left: 18px;
+    width: 20px;
+    height: 10px;
+    border-bottom: 3px solid black;
+    border-radius: 0 0 20px 20px;
+    bottom: 30px;
+    left: 40px;
 }
 
-/* Animations */
-@keyframes openFlap {
-    to {
-        transform: rotateX(180deg);
-    }
+/* Kiss heart */
+.kiss {
+    position: absolute;
+    color: pink;
+    font-size: 20px;
+    animation: blowKiss 2s infinite;
+    top: 30px;
+    right: -10px;
 }
 
-@keyframes letterUp {
-    to {
-        bottom: 0;
-    }
+@keyframes blowKiss {
+    0% { opacity: 0; transform: translate(0,0) scale(0.5); }
+    30% { opacity: 1; }
+    100% { opacity: 0; transform: translate(80px,-40px) scale(1.2); }
 }
 
-@keyframes heartPop {
-    to {
-        transform: rotate(-45deg) scale(1.2);
-        opacity: 1;
-    }
+/* Message */
+.message {
+    font-size: 24px;
+    color: #b3003c;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    gap: 20px;
+}
+
+button {
+    padding: 12px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.yes {
+    background: #ff4d6d;
+    color: white;
+}
+
+.no {
+    background: #ccc;
+    position: relative;
 }
