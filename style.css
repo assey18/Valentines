@@ -1,111 +1,115 @@
 body {
     margin: 0;
     height: 100vh;
-    background: linear-gradient(#ffe6eb, #ffc1d6);
+    background: #ffb6c1; /* Pink background */
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     font-family: Arial, sans-serif;
+}
+
+/* Main card */
+.card {
+    background: #ffe0eb; /* lighter pink */
+    padding: 60px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
 /* Heart */
 .heart {
     position: relative;
-    width: 100px;
-    height: 100px;
-    background: red;
+    width: 140px;
+    height: 140px;
+    background: hotpink;
     transform: rotate(-45deg);
-    margin-bottom: 40px;
+    margin: 0 auto 40px;
+    animation: pulse 1.5s infinite;
 }
 
 .heart::before,
 .heart::after {
     content: "";
     position: absolute;
-    width: 100px;
-    height: 100px;
-    background: red;
+    width: 140px;
+    height: 140px;
+    background: hotpink;
     border-radius: 50%;
 }
 
 .heart::before {
-    top: -50px;
+    top: -70px;
     left: 0;
 }
 
 .heart::after {
-    left: 50px;
+    left: 70px;
     top: 0;
 }
 
 /* Face */
 .eye {
     position: absolute;
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     background: black;
     border-radius: 50%;
-    top: 40px;
+    top: 55px;
 }
 
-.eye.left { left: 25px; }
-.eye.right { right: 25px; }
+.eye.left { left: 40px; }
+.eye.right { right: 40px; }
 
 .smile {
     position: absolute;
-    width: 20px;
-    height: 10px;
-    border-bottom: 3px solid black;
-    border-radius: 0 0 20px 20px;
-    bottom: 30px;
-    left: 40px;
-}
-
-/* Kiss heart */
-.kiss {
-    position: absolute;
-    color: pink;
-    font-size: 20px;
-    animation: blowKiss 2s infinite;
-    top: 30px;
-    right: -10px;
-}
-
-@keyframes blowKiss {
-    0% { opacity: 0; transform: translate(0,0) scale(0.5); }
-    30% { opacity: 1; }
-    100% { opacity: 0; transform: translate(80px,-40px) scale(1.2); }
+    width: 30px;
+    height: 15px;
+    border-bottom: 4px solid black;
+    border-radius: 0 0 30px 30px;
+    bottom: 45px;
+    left: 55px;
 }
 
 /* Message */
 .message {
-    font-size: 24px;
-    color: #b3003c;
-    margin-bottom: 20px;
-    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: #b30059;
+    margin-bottom: 40px;
 }
 
 /* Buttons */
 .buttons {
+    position: relative;
     display: flex;
-    gap: 20px;
+    justify-content: center;
+    gap: 40px;
 }
 
 button {
-    padding: 12px 30px;
-    font-size: 18px;
-    border: none;
-    border-radius: 25px;
+    font-size: 22px;
+    padding: 16px 50px;
+    border-radius: 35px;
     cursor: pointer;
+    border: none;
+    transition: 0.3s;
 }
 
 .yes {
-    background: #ff4d6d;
+    background: #2f80ff;
     color: white;
 }
 
 .no {
-    background: #ccc;
+    background: white;
+    color: #333;
     position: relative;
+}
+
+/* Heart animation */
+@keyframes pulse {
+    0% { transform: rotate(-45deg) scale(1); }
+    50% { transform: rotate(-45deg) scale(1.1); }
+    100% { transform: rotate(-45deg) scale(1); }
 }
